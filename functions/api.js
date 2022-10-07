@@ -11,7 +11,7 @@ app.use('/starwars', starwarsRoute);
 
 
 app.get('/', (req, res)=>{
-   res.sendFile('index.html', { root: './functions/routes/pages/' });
+   res.sendFile('./public/main.html');
 })
 
 app.use('/', router)
