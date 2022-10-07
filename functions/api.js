@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const home = require('./routes/pages/index.html')
 const serverless = require('serverless-http');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -12,7 +11,7 @@ app.use('/starwars', starwarsRoute);
 
 
 app.get('/', (req, res)=>{
-   res.sendFile(home);
+   res.sendFile('index.html', { root: './functions/routes/pages/' });
 })
 
 app.use('/', router)
