@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const serverless = require('serverless-http');
 const mongoose = require('mongoose');
-// const { MongoClient, ServerApiVersion } = require('mongodb');
+
 const starwarsRoute = require('./routes/starwars');
 const router = express.Router();
 // const bodyParser = require('body-parser');
@@ -23,12 +23,8 @@ app.get('/', (req, res)=>{
 app.use('/', router)
 
 //connect db
-const connectDB = (url) => {
-  return mongoose.connect(url);
-};
-
-connectDB(process.env.DB_CONNECTION);
-
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true,}, ()=>{
+})
 
 
 
