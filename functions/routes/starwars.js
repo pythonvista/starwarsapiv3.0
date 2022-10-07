@@ -16,7 +16,7 @@ function addPost(dbname, data){
 
 
 router.get('/',  (req, res) => {
-  res.sendFile(path.join(__dirname+'/pages/starwars.html'));
+  res.json({"comingsoon": "comming soon page"})
 });
 
 

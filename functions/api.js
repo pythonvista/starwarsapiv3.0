@@ -7,11 +7,12 @@ const starwarsRoute = require('./routes/starwars');
 const router = express.Router();
 require('dotenv/config')
 app.use(express.json())
-app.use('/starwars', starwarsRoute);
+app.use('/api', starwarsRoute);
 
 
 app.get('/', (req, res)=>{
-   res.sendFile('./public/main.html');
+   res.redirect("https://coming soon");
+   res.json({"status": "coming soon"})
 })
 
 app.use('/', router)
