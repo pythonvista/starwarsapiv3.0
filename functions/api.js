@@ -15,7 +15,9 @@ app.use('/starwars', starwarsRoute);
 
 
 app.get('/', (req, res)=>{
-    res.send("we are home")
+   res.json({
+    "title":"Starwars api created by python v for starwars story"
+   })
 })
 
 app.use('/', router)
