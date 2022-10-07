@@ -11,7 +11,7 @@ app.use('/api', starwarsRoute);
 
 
 app.get('/', (req, res)=>{
-   res.redirect("https://coming soon");
+   // res.redirect("https://coming soon");
    res.json({"status": "coming soon"})
 })
 
