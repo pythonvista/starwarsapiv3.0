@@ -10,10 +10,11 @@ router.get('/', async (req, res) => {
       }catch(err){
         res.json({message: err})
       }
-
-    // res.json({
-    //   "name": "vicky"
-    // })
+});
+router.get('/info', async (req, res) => {
+  res.json({
+    "starwars":"testing"
+  })
 });
 
 router.post('/', async (req, res) => {
