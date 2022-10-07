@@ -3,9 +3,11 @@ const app = express();
 const serverless = require('serverless-http');
 const mongoose = require('mongoose');
 const path = require('path');
+const cors = require('cors')
 const starwarsRoute = require('./routes/starwars');
 const router = express.Router();
 require('dotenv/config')
+app.use(cors())
 app.use(express.json())
 app.use('/api', starwarsRoute);
 
