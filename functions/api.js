@@ -5,12 +5,12 @@ const mongoose = require('mongoose');
 // const { MongoClient, ServerApiVersion } = require('mongodb');
 const starwarsRoute = require('./routes/starwars');
 const router = express.Router();
-const bodyParser = require('body-parser');
-const cors = require('cors')
+// const bodyParser = require('body-parser');
+// const cors = require('cors')
 require('dotenv/config')
 
-app.use(cors())
-app.use(bodyParser.json())
+// app.use(cors())
+app.use(express.json())
 app.use('/starwars', starwarsRoute);
 
 
@@ -23,8 +23,12 @@ app.get('/', (req, res)=>{
 app.use('/', router)
 
 //connect db
-mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true,}, ()=>{
-})
+const connectDB = (url) => {
+  return mongoose.connect(url);
+};
+
+connectDB(process.env.DB_CONNECTION);
+
 
 
 
