@@ -59,9 +59,10 @@ router.get('/guns', async (req, res) => {
 
 
 router.post('/post-starwars', async (req, res) => {
+  console.log(req.body)
   const post = {
     title: req.body.title,
-    shortDescrption: req.body.shortDescrption,
+    shortDescription: req.body.shortDescription,
     description: req.body.description,
     image: req.body.image,
   };
