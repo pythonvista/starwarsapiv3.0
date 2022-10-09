@@ -77,19 +77,6 @@ router.post('/post-starwars', async (req, res) => {
 });
 
 
-router.post('/', async (req, res) => {
-  const post = {
-    title: req.body.title,
-    shortDescrption: req.body.shortDescrption,
-    description: req.body.description,
-    image: req.body.image,
-  };
 
-  try {
-    res.json(post)
-  } catch (err) {
-    res.send('error eccoured');
-  }
-});
 
 module.exports = router;
